@@ -1,0 +1,20 @@
+.Container {
+    width: 100%;
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #2e9bef;
+}
+
+.Header p {
+    margin: 0;
+    color: #ffffff;
+}
+
+.ContentWrapper{
+    padding: 20px;
+}
