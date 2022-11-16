@@ -8,7 +8,7 @@ function SearchContainer() {
     return (
         <section className={modules.Container}>
             <div className={modules.Header}>
-                <p>Unsplash Search App</p>
+                <h2>Unsplash Search App</h2>
             </div>
 
             <div className={modules.ContentWrapper}>

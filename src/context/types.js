@@ -1,0 +1,3 @@
+export const SEARCH_PICTURES = 'SEARCH_USERS';
+export const SET_LOADING = 'SET_LOADING';
+export const CLEAR_PICTURES = 'CLEAR_PICTURES';

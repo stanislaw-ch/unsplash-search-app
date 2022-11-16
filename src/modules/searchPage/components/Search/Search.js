@@ -1,24 +1,27 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import modules from "./Search.module.css"
+import {UnsplashContext} from "../../../../context/unsplash/UnsplashContext";
 
 function Search() {
     const [value, setValue] = useState('');
-    // const alert = useContext(AlertContext);
-    // const github = useContext(GithubContext);
+    const [isDisabled, setIsDisabled] = useState(true);
+    const unsplash = useContext(UnsplashContext);
 
-    const onSubmit = (event) => {
-        if (event.key !== "Enter") {
-            return;
-        }
-
-        // github.clearUsers()
+    const onInputChange = (event) => {
+        const value = event.target.value;
 
         if (value.trim()) {
-            // alert.hide()
-            // github.search(value.trim())
+            setIsDisabled(false);
         } else {
-            alert.show('Введите данные пользователя!')
+            setIsDisabled(true);
         }
+
+        setValue(value);
+    }
+
+    const onSubmit = () => {
+        unsplash.clearPictures();
+        unsplash.search(value.trim());
     }
 
     return (
@@ -28,13 +31,16 @@ function Search() {
                 className="form-control"
                 placeholder="Search for pictures..."
                 value={value}
-                onChange={event => setValue(event.target.value)}
+                onChange={onInputChange}
             />
             <button
                 type="button"
-                value="Search"
                 aria-label="Search"
-                onClick={onSubmit} />
+                disabled={isDisabled}
+                onClick={onSubmit}
+            >
+                Search
+            </button>
         </div>
     )
 }

@@ -5,12 +5,12 @@
 .Header {
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 70px;
     padding: 0 20px;
     background-color: #2e9bef;
 }
 
-.Header p {
+.Header h2 {
     margin: 0;
     color: #ffffff;
 }
