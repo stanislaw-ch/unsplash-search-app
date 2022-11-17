@@ -8,7 +8,7 @@ function SearchList() {
     return(
         pictures.length !== 0
             ? <div className={modules.Container}>
-                    <h3>Search result</h3>
+                    <h3>Search result for first 20 images</h3>
 
                     <div className={modules.ResultContainer}>
                         <div className={modules.ResultWrapper}>
