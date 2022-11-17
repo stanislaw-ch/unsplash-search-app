@@ -4,11 +4,11 @@ import {UnsplashContext} from "../../../../context/unsplash/UnsplashContext";
 import Picture from "./Picture/Picture";
 
 function SearchList() {
-    const {loading, pictures} = useContext(UnsplashContext);
+    const {loading, pictures, pageAmount} = useContext(UnsplashContext);
     return(
         pictures.length !== 0
             ? <div className={modules.Container}>
-                    <h3>Search result for first 20 images</h3>
+                    <h3>Search result for first {pageAmount} images</h3>
 
                     <div className={modules.ResultContainer}>
                         <div className={modules.ResultWrapper}>
